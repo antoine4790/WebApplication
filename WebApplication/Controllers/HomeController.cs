@@ -35,7 +35,7 @@ namespace WebApplication.Controllers
 
         public ActionResult MyMessages()
         {
-            
+            ViewBag.Message = new Message { Emetteur = "caca", Contenu = "contenu1", Date = DateTime.Now };
             return View();
         }
 
@@ -61,7 +61,7 @@ namespace WebApplication.Controllers
 
         public ActionResult MyListMessages()
         {
-            ViewBag.Liste = new List<string> { "coucou", "caca", "jiji" };
+            ViewBag.ListeMessages = new List<Message> { new Message (){ Emetteur = "caca", Contenu = "contenu1", Date = DateTime.Now } };
             return View();
         }
 

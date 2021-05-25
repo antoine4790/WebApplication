@@ -17,19 +17,22 @@
         // Prends par défaut la page et le contrôleur via l'url => localhost/Home/Index donnera un post qui va sur l'action Index de mon contrôleur Home
         {
             <div>
-                for(int i= 0; i< 3; i++){
-                <label>value 1</label>
-                <input type="text" name="vals" value="" /><br />
+                @for (int i = 0; i < 3; i++)
+                {
+                    <label>value 1</label>
+                    <input type="text" name="vals" value="" /><br />
 
-                <label>value i</label>
-                <input type="text" name="vals" value="" /><br />
+                    <label>value i</label>
+                    <input type="text" name="vals" value="" /><br />
+                }
             </div>
+
             <div>
                 <input type="submit" value="Valider" />
             </div>
         }
 
-        @foreach (var message in Model)
+        @foreach (var message in ViewBag.ListeMessages)
         {<p>@message.Contenu</p>}
     </div>
 </body>
