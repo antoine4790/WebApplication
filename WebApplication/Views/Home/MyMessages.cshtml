@@ -1,0 +1,19 @@
+﻿@model WebApplication.Models.Message
+@{
+    ViewBag.Title = "MyView";
+}
+
+<h2>MyView</h2>
+
+@using (Html.BeginForm())
+// Prends par défaut la page et le contrôleur via l'url => localhost/Home/Index donnera un post qui va sur l'action Index de mon contrôleur Home
+{
+    <div> @Html.LabelFor(m => m.Emetteur) @Html.TextBoxFor(m => m.Emetteur) </div>
+    <div>@Html.LabelFor(m => m.Contenu) @Html.TextBoxFor(m => m.Contenu) </div>
+    <div><input type="submit" value="Valider" /></div>
+}
+
+<p>@ViewBag.Message.Emetteur</p>
+<p>@ViewBag.Message.Contenu</p>
+
+

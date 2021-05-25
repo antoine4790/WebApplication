@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Liste String";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>Formulaire pour envoyer la liste en Post</h2>
+        @using (Html.BeginForm())
+        // Prends par défaut la page et le contrôleur via l'url => localhost/Home/Index donnera un post qui va sur l'action Index de mon contrôleur Home
+        {
+            <div>
+                <label>value 1</label>
+                <input type="text" name="vals" value="" /><br />
+
+                <label>value 2</label>
+                <input type="text" name="vals" value="" /><br />
+            </div>
+            <div>
+                <input type="submit" value="Valider" />
+            </div>
+        }
+
+
+
+        @foreach (var item in ViewBag.Liste)
+        {<p>@item</p>}
+
+
+
+    </div>
+</body>
+</html>
